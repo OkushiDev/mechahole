@@ -1,0 +1,15 @@
+# Exclusión de metadatos y cachés locales del motor (Godot 4.x)
+.godot/
+
+# Exclusión de metadatos para proyectos en Godot 3.x (si aplica)
+.import/
+
+# Archivos de traducción automática basados en binarios
+*.translation
+
+# Exclusiones específicas del sistema operativo y editores externos
+.DS_Store
+.mono/
+.vs/
+.vscode/
+export_presets.cfg
