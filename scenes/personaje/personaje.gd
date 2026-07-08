@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
 @export var animacion: AnimatedSprite2D
+@export var area_2d: Area2D
 
 var _velocidad: float = 100.0
 var _velocidad_salto: float = -300.0
 
+func _ready():
+	area_2d.body_entered.connect(_on_area_2d_body_entered)
+
 func _physics_process(delta):
-	
-	#Animaciones
-	
-	
 	#Gravedad
 	velocity += get_gravity() * delta
 	
@@ -38,3 +38,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("muerto")

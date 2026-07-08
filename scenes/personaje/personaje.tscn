@@ -80,9 +80,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(29, 31)
 
-[node name="Personaje" type="CharacterBody2D" unique_id=1373540038 node_paths=PackedStringArray("animacion")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(29, 31)
+
+[node name="Personaje" type="CharacterBody2D" unique_id=1373540038 node_paths=PackedStringArray("animacion", "area_2d")]
+collision_layer = 4
 script = ExtResource("1_yq61j")
 animacion = NodePath("Animacion")
+area_2d = NodePath("Area2D")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=98398605]
 sprite_frames = SubResource("SpriteFrames_ociud")
@@ -91,3 +96,11 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2066902427]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1865483780]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1799977774]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_yf5fn")
