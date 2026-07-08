@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cg4umpkyqodb3"]
+
+[ext_resource type="Texture2D" uid="uid://bburbw88o0ua4" path="res://assets/sprites/robotex3_spritesheet.png" id="1_vycqi"]
+[ext_resource type="Script" uid="uid://d2nlsg5fpyc8h" path="res://scenes/personaje/personaje.gd" id="1_yq61j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq61j"]
+atlas = ExtResource("1_vycqi")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvjb6"]
+atlas = ExtResource("1_vycqi")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04a37"]
+atlas = ExtResource("1_vycqi")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndq3x"]
+atlas = ExtResource("1_vycqi")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5ulf"]
+atlas = ExtResource("1_vycqi")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7af4"]
+atlas = ExtResource("1_vycqi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lucw4"]
+atlas = ExtResource("1_vycqi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qys2"]
+atlas = ExtResource("1_vycqi")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ociud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq61j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvjb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04a37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndq3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5ulf")
+}],
+"loop": 1,
+"name": &"correr",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7af4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lucw4")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qys2")
+}],
+"loop": 1,
+"name": &"saltar",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(29, 31)
+
+[node name="Personaje" type="CharacterBody2D" unique_id=1373540038]
+script = ExtResource("1_yq61j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=98398605]
+sprite_frames = SubResource("SpriteFrames_ociud")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2066902427]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_g4v7s")
