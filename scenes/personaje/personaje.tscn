@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cg4umpkyqodb3"]
 
 [ext_resource type="Texture2D" uid="uid://bburbw88o0ua4" path="res://assets/sprites/robotex3_spritesheet.png" id="1_vycqi"]
-[ext_resource type="Script" uid="uid://d2nlsg5fpyc8h" path="res://scripts/personaje/personaje.gd" id="1_yq61j"]
+[ext_resource type="Script" uid="uid://b66ncvmijhbta" path="res://scenes/personaje/personaje.gd" id="1_yq61j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yq61j"]
 atlas = ExtResource("1_vycqi")
@@ -80,10 +80,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(29, 31)
 
-[node name="Personaje" type="CharacterBody2D" unique_id=1373540038]
+[node name="Personaje" type="CharacterBody2D" unique_id=1373540038 node_paths=PackedStringArray("animacion")]
 script = ExtResource("1_yq61j")
+animacion = NodePath("Animacion")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=98398605]
+[node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=98398605]
 sprite_frames = SubResource("SpriteFrames_ociud")
 animation = &"idle"
 
