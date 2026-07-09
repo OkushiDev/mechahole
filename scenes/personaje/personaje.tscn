@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bburbw88o0ua4" path="res://assets/sprites/robotex3_spritesheet.png" id="1_vycqi"]
 [ext_resource type="Script" uid="uid://b66ncvmijhbta" path="res://scenes/personaje/personaje.gd" id="1_yq61j"]
+[ext_resource type="Material" uid="uid://bwygpbwubs7f" path="res://scenes/personaje/material_personaje_daño.tres" id="2_bvjb6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yq61j"]
 atlas = ExtResource("1_vycqi")
@@ -88,6 +89,7 @@ collision_layer = 4
 script = ExtResource("1_yq61j")
 animacion = NodePath("Animacion")
 area_2d = NodePath("Area2D")
+material_personaje_rojo = ExtResource("2_bvjb6")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=98398605]
 sprite_frames = SubResource("SpriteFrames_ociud")

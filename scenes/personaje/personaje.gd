@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var animacion: AnimatedSprite2D
 @export var area_2d: Area2D
+@export var material_personaje_rojo: ShaderMaterial
 
 var _velocidad: float = 100.0
 var _velocidad_salto: float = -300.0
